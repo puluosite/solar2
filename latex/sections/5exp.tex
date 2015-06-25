@@ -43,12 +43,12 @@ is $0.995$. The results show that the Colony-Wise model has nearly the same accu
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=1\columnwidth]{figs/ncHist.pdf}
+    \includegraphics[width=1\columnwidth]{figs/ncHist_5lvl.pdf}
     \caption{(a) NC model's MPP error histogram over $900$ test cases (b) NC model's CORR histogram over $900$ test cases}
     \label{fig:ncHist}
 \end{figure}
 
-Then, we compare the N-Colony model with the Ground Truth model. Figure \ref{fig:ncHist} (a) shows the histogram of $900$ cases¡¯ MPP error and (b) shows the CORRs' histogram. The average MPP error is $2.03\%$, and the average CORR is $0.93$. The NC model sacrifices the accuracy a little for it's constant computational complexity. There are two major reasons for the loss of accuracy. First, the NC model has constant number of component, therefore, there will be information loss when converting from the GT model to the NC model. Second, the NC model is an experimental model, which means some of its parameters are curved fitted (trained) through experiment data. The shading patterns of the large error cases are not covered in the $20$ training patterns. Therefore, the NC model has larger error for these cases. To overcome this weakness, we can increase the number of training patterns.
+Then, we compare the N-Colony model with the Ground Truth model. Figure \ref{fig:ncHist} (a) shows the histogram of $900$ cases¡¯ MPP error and (b) shows the CORRs' histogram. The average MPP error is $5.15\%$, and the average CORR is $0.96$. The NC model sacrifices the accuracy a little for it's constant computational complexity. There are two major reasons for the loss of accuracy. First, the NC model has constant number of component, therefore, there will be information loss when converting from the GT model to the NC model. Second, the NC model is an experimental model, which means some of its parameters are curved fitted (trained) through experiment data. The shading patterns of the large error cases are not covered in the $20$ training patterns. Therefore, the NC model has larger error for these cases. To overcome this weakness, we can increase the number of training patterns.
 
 \begin{table}[tb]
   \caption{Runtime of the Three Models}
@@ -59,22 +59,22 @@ Then, we compare the N-Colony model with the Ground Truth model. Figure \ref{fig
   \hline
   \pbox{2cm}{PV Module \\ Config} & GT & CW (Speedup) & NC (Speedup)\\
   \hline
-  $60s2p$ &$2281s$ & $248s$ (9.2X) & $129s$ (17.7X)\\
+  $60s2p$ &$2216s$ & $318s$ (7.0X) & $129s$ (17.2X)\\
   \hline
-  $30s4p$ &$1301s$ & $401s$ (3.2X) & $126s$ (10.3X) \\
+  $30s4p$ &$1325s$ & $317s$ (4.2X) & $91s$ (14.5X) \\
   \hline
-  $30s2p$&$1235s$ & $228s$ (5.4X) & $123s$ (10.0X) \\
+  $40s2p$&$1652s$ & $267s$ (6.2X) & $101s$ (16.3X) \\
   \hline
 \end{tabular}
 \end{table}
 
 
 \subsection{Speed Comparisons Among the Three Models}
-We compare the three models¡¯ efficiency in terms of HSpice simulation time. The total run-time of the $300$ cases for each PV module is shown in Table \ref{table:rtComp}.
+We compare the three models' efficiency in terms of HSpice simulation time. The total run-time of the $300$ cases for each PV module is shown in Table \ref{table:rtComp}.
 
 As shown in Table \ref{table:rtComp}, the runtime of the GT model is roughly proportional to the number of solar cells in a PV module. The runtime of the CW model is proportion to the multiplication of bypass diodes in a PV module. In addition, the runtime of the NC model is proportional to the number of bypass diodes in a solar cell chain.
 
-The maximum speedup of the NC model is $17.7$X when the PV module setting is $60s2p$ ($3$ bypass diodes for each chain). The speedup can be higher when a PV module has more paralleled solar cell chain and less bypass diodes within one solar cell chain.
+The maximum speedup of the NC model is $17.2$X when the PV module setting is $60s2p$ ($3$ bypass diodes for each chain). The speedup can be higher when a PV module has more paralleled solar cell chain and less bypass diodes within one solar cell chain.
 
 
 

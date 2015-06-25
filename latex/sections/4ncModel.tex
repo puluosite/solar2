@@ -18,7 +18,7 @@ First, we determine the shading level of each super colony. It is also the $I_{p
 
 According to Equation \ref{equ:slMax} and\ref{equ:slMin}, we can calculate the $SL_{max}^{(i,j)}$ and $SL_{min}^{(i,j)}$ of each colony. Note that when the cells are identical within a colony, $SL_{max}^{(i,j)} = SL_{min}^{(i,j)}$ . The notation $(i,j)$ represents the $i^{th}$ colony in the $j^{th}$ column in a PV module.
 
-We define a matrix namely the All Min Matrix ($M_(am)$) to record all $SL_{max}^{(i,j)}$s and $SL_{min}^{(i,j)}$s. $M_(am)$ is an ordered matrix, and is formed as the following. For the $j^{th}$ chain of a PV module, we have the a SL sequence for all the colonies within this chain: $SL_{min}^{(1,j)},SL_{min}^{(2,j)}m \dots,SL_{min}^{(n_{bp},j)}$. We then reorder this sequence into: $SL^{(1,j)},SL^{(2,j)}, \dots,SL^{(n_{bp},j)}$, such that:
+We define a matrix namely the All Min Matrix ($M_{am}$) to record all $SL_{max}^{(i,j)}$s and $SL_{min}^{(i,j)}$s. $M_{am}$ is an ordered matrix, and is formed as the following. For the $j^{th}$ chain of a PV module, we have the a SL sequence for all the colonies within this chain: $SL_{min}^{(1,j)},SL_{min}^{(2,j)}m \dots,SL_{min}^{(n_{bp},j)}$. We then reorder this sequence into: $SL^{(1,j)},SL^{(2,j)}, \dots,SL^{(n_{bp},j)}$, such that:
 \begin{equation}\label{equ:slChain}
   SL^{(1,j)} \le SL^{(2,j)} \le \dots \le SL^{(n_{bp},j)}
 \end{equation}
@@ -110,9 +110,9 @@ In Table \ref{table:ncRule} $I_{s_{bp}}^s$ and $N_{bp}^s$ are the parameters of 
   \hline
   Weighting Factors & $60s2p$ & $30s4p$ & $40s2p$\\
   \hline
-  $\{\alpha_1, \beta_1, \gamma_1\}$ &$\{0.41, 0.17, 0.04\} $ & $\{0.39, 0.19, 0.09\} $ & $\{0.37, 0.17, 0.06\}$ \\
+  $\{\alpha_1, \beta_1, \gamma_1\}$ &$\{0.41, 0.17, 0.04\} $ & $\{0.75, 0.22, 0.06\} $ & $\{0.71, 0.27, 0.10\}$ \\
   \hline
-  $\{\alpha_2, \beta_2, \gamma_2\}$ &$\{0.40, 0.20, 0.14\} $ & $\{0.41, 0.20, 0.09\} $ & $\{0.41, 0.20, 0.07\}$ \\
+  $\{\alpha_2, \beta_2, \gamma_2\}$ &$\{0.40, 0.20, 0.14\} $ & $NA $ & $NA$ \\
   \hline
 \end{tabular}
 \end{table*}
