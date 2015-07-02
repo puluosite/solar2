@@ -6,28 +6,27 @@ For the One-Diode model, the Current-Voltage (I-V) curve of the solar cell is as
 \begin{equation}\label{equ:oneD}
   I = I_{ph_o} - I_{s_o}[exp(q\frac{V + R_{s_o}I}{N_okT}) - 1] - \frac{V + R_{s_o}I}{R_{{sh}_o}}
 \end{equation}
-
-where $I_{ph_o}$ is the photovoltaic (PV) current and $I_{s_o}$ is the reverse saturation current of the diode $D$. $N_o$ is the diode quality factor, $k$ is the Boltzmann constant, $T$ is the cell operating temperature, and $q$ is the unit electronic charge. $R_{s_o}$ is the equivalent serial resistance of the cell and $R_{{sh}_o}$ is the shunt resistance \cite{oneD1}. Note that the macro cell and the super cell are also modeled as the One-Diode model. The subscript $o$ represents all parameters are from the solar cell One-Diode model to make a difference in notation. These parameters can be extracted from manufacturer specifications or from the measured I-V curves of solar cells.
+where $I_{ph_o}$ is the photovoltaic (PV) current. $I_{s_o}$ is the reverse saturation current of the diode $D_o$. $N_o$ is the diode quality factor, $k$ is the Boltzmann constant, $T$ is the cell operating temperature, and $q$ is the unit electronic charge. $R_{s_o}$ is the equivalent serial resistance of the cell and $R_{{sh}_o}$ is the shunt resistance \cite{oneD1}. Note that the macro cell and the super cell are also modeled as the One-Diode model. The subscript $o$ represents all parameters are from the solar cell's One-Diode model. These parameters can be extracted from manufacturer specifications or from the measured I-V curves of a solar cell.
 \subsection{Shading Effects Representation in the One-Diode Model}
-Shading effects are the non-uniformly received solar irradiance for each solar cell in a PV module. Since the received solar irradiance directly determines the photovoltaic current $I_{ph}$ in the One-Diode model, shading effects can be represented as each solar cell has its own $I_{ph}$.
+Shading effects are the non-uniformly received solar irradiance for each solar cell in a PV module. Since the received solar irradiance directly determines the photovoltaic current $I_{ph_o}$ in the One-Diode model, shading effects can be represented as each solar cell has its own $I_{ph_o}$.
 \subsection{Notations and Definitions}
-We describe a PV module's configuration as the following. Without loss of generality, we assume the PV module to be $mSnP$, which means this module has $n$ paralleled solar cell chains and $m$ cascaded solar cells for each chain. The number of bypass diodes for each solar cell chain is $n_{bp}$. One PV module has $n*n_{bp}$ bypass diodes.
+We describe a PV module's configuration as the following. Without loss of generality, we assume a PV module to be $mSnP$, which means this module has $n$ paralleled solar cell chains and $m$ cascaded solar cells for each chain. The number of bypass diodes for each solar cell chain is $n_{bp}$. One PV module has $n*n_{bp}$ bypass diodes.
 
 We use shading level $SL$ to describe the shading effects. One $SL$ is defined as the $I_{ph}$ of a solar cell in the One-Diode model. Therefore, for the $i^{th}$ solar cell in the $j^{th}$ chain, we have:
 \begin{equation}\label{equ:shadingLevel}
   SL_{ij} = I_{ph}(i,j)
 \end{equation}
 
-All the shading levels together on a PV module represent its shading effects. The total number of different shading levels within one PV module is denoted as $n_{SL}$. Note that when all the solar cells have the identical photovoltaic current, $n_{SL} = 1$. This means there is not shading effects. The maximum of $n_{SL}$ is $m*n$, when each of the solar cell has its own unique shading level.
+All the shading levels together on a PV module represent its shading effects. The total number of different shading levels within one PV module is denoted as $n_{SL}$. Note that when all the solar cells have the identical photovoltaic current, $n_{SL} = 1$. This means there are no shading effects. The maximum of $n_{SL}$ is $m*n$, when each of the solar cell has its own unique shading level.
 
 For a PV module with $n_{SL}$ multilevel shadings, we can use a $I_{ph}$ sequence and a ratios sequence to represent shading effects:
 \begin{equation}\label{equ:slRepresent}
 \begin{aligned}
-  &SLs = \{I_{ph1}, I_{ph2},\dots, I_{phn_{SL}}\}\\
+  &SLs = \{I_{ph_1}, I_{ph_2},\dots, I_{ph_{n_{SL}}}\}\\
   &ratios = \{r_1, r_2, \dots, r_{n_{SL}}\}
 \end{aligned}
 \end{equation}
-where the ratios $r_i$ represents the percentage of solar cells that has $I_{phi}$. Therefore, in a $mSnP$ PV module, there are $m*n*r_i$ solar cells that have $I_{phi}$.
+where the ratios $r_i$ represents the percentage of solar cells that has $I_{phi}$. Therefore, in an $mSnP$ PV module, there are $m*n*r_i$ solar cells that have $I_{ph_i}$.
 
 
 
